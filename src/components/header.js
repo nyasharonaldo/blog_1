@@ -1,8 +1,6 @@
 import React from "react"
 import  {Link } from "gatsby"
-const Header = ({ location }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  console.log(location.pathname)
+const Header = () => {
   
   return (
     <nav class="navbar bg-dark">
