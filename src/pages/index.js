@@ -1,7 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -13,7 +11,20 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
+      <section class="landing">
+        <div class="dark-overlay">
+          <div class="landing-inner">
+            <h1 class="x-large">Welcome</h1>
+            <p class="lead">Share & Learn new Investment Techniques</p>
+            <div class="buttons">
+              <Link to="#blog" class="btn btn-primary">
+                View Blog
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id='blog' class='container'>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -40,6 +51,7 @@ const BlogIndex = ({ data, location }) => {
           </article>
         )
       })}
+      </section>
     </Layout>
   )
 }

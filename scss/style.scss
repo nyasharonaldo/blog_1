@@ -1,0 +1,288 @@
+@import "config";
+@import "utilities";
+@import "form";
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  opacity: 0.9;
+  ul {
+    display: flex;
+    margin-bottom: 0;
+    li {
+      
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  a {
+    color: #fff;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+    box-shadow: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+    &.navlinks {
+      font-size: 4rem;
+    }
+  }
+}
+
+#blog{
+  height:100%
+}
+
+//landing
+
+.landing {
+  position: relative;
+  background: url("../img/investor.jpeg") no-repeat center center/cover;
+  height: 100vh;
+
+  &-inner {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Header Showcase */
+
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#showcase .bg-image {
+  position: absolute;
+  background: #333 url("../img/motorcycle.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  width: $max-width;
+  // max-width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#showcase h1 {
+  padding-top: 5rem;
+  padding-bottom: 0;
+}
+
+#showcase .content-wrap {
+  padding: 0 1.5em;
+}
+
+//Blog Grid
+
+.blog-section {
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  max-height: 450px;
+  background: #313131;
+}
+
+#blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(10rem, auto);
+  grid-gap: 12px;
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      @include transition-ease;
+    }
+    img {
+      background: #333;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-height: 25rem;
+      object-fit: cover;
+
+      z-index: -10;
+      opacity: 1;
+    }
+    
+    &#news {
+      align-items: flex-start;
+      grid-column: 3/3;
+      grid-row: 1/4;
+    }
+  }
+}
+
+// Profiles Page
+.profile {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  align-items: centre;
+  grid-gap: 2rem;
+  padding: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+// Profile Page
+.profile-grid {
+  display: grid;
+  grid-template-areas: "top top" "about about" "exp edu" "github github";
+  grid-gap: 1rem;
+  .profile-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    img {
+      width: 250px;
+    }
+    .icons a {
+      color: #fff;
+      margin: 0 0.3rem;
+
+      &:hover {
+        color: $dark-color;
+      }
+    }
+  }
+  .profile-about {
+    grid-area: about;
+    text-align: center;
+
+    .skills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .profile-exp {
+    grid-area: exp;
+  }
+  .profile-edu {
+    grid-area: edu;
+  }
+
+  .profile-exp,
+  .profile-edu {
+    & > div {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: #ccc 1px dotted;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .profile-github {
+    grid-area: github;
+    .repo {
+      display: flex;
+
+      & > div:first-child {
+        flex: 7;
+        flex-basis: 70%;
+      }
+      & > div:last-child {
+        flex: 3;
+        flex-basis: 20%;
+      }
+    }
+  }
+}
+
+// Posts page
+.post-form-header {
+  padding: 0.5rem;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+
+  & > div:first-child {
+    text-align: center;
+  }
+
+  img {
+    width: 150px;
+  }
+}
+
+@import "mobile";

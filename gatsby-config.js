@@ -1,9 +1,10 @@
+require('dotenv').config();
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Investor Connector`,
+    author: `Notre Investments`,
+    description: `A blog for investors to share knowledge and collaborate on profitable strategies`,
+    siteUrl: `https://peaceful-brahmagupta-e83e3b.netlify.com/`,
     social: {
       twitter: `kylemathews`,
     },
@@ -39,7 +40,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
