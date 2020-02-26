@@ -2,6 +2,8 @@
 title: It's Been Too Long
 date: 2020-02-23T18:23:57.198Z
 thumbnail: /img/motorcycle.jpg
+tags:
+  - General
 description: A post to test the functionality of Netlify CMS
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut porta eros. Nulla sit amet felis auctor, tristique eros eu, accumsan felis. Quisque faucibus, dolor vel viverra sollicitudin, quam nibh luctus turpis, ut tempus ante ex ac nisi. Cras vitae mauris non sem tempus pulvinar. Aliquam tempus sollicitudin diam, in commodo nisl rutrum nec. Mauris id ex vitae risus convallis egestas nec a ante. Etiam sagittis facilisis tempus. Sed sit amet odio et orci eleifend molestie. Pellentesque nibh libero, commodo sit amet maximus in, maximus eget enim.
