@@ -14,7 +14,9 @@ const BlogIndex = ({ data, location }) => {
       <section class="landing">
         <div class="dark-overlay">
           <div class="landing-inner">
-            <h1 class="x-large">Welcome</h1>
+            <div style={{display: `flex`}}>
+            <h1 class="x-large">Notre</h1><h3>Studios</h3>
+            </div>
             <p class="lead">Share & Learn new Investment Techniques</p>
             <div class="buttons">
               <Link to="#blog" class="btn btn-primary">

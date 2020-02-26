@@ -15,8 +15,10 @@ collections:
      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Type", name: "type", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - { label: "Tags", name: "tags", widget: "select", multiple: true, min: 1,
+          options: ["Stocks & Shares", "Fixed Income", "Cryptocurrency", "General"],default: ["Design"]}
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      
