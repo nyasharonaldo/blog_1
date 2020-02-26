@@ -81,6 +81,7 @@ img {
 
 //landing
 
+
 .landing {
   position: relative;
   background: url("../img/investor.jpeg") no-repeat center center/cover;
@@ -146,11 +147,11 @@ img {
 #blog-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(10rem, auto);
+  grid-template-rows: minmax(1rem, auto);
   grid-gap: 12px;
-
+  
   .box {
-    display: flex;
+    display: flex-start;
     justify-content: center;
     align-items: center;
 
@@ -167,6 +168,14 @@ img {
 
       z-index: -10;
       opacity: 1;
+    }
+
+    h3{
+      margin-top: 0;
+    }
+
+    p{
+      margin-bottom: 0;
     }
     
     &#news {
