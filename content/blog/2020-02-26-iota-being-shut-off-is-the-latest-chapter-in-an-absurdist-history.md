@@ -4,7 +4,6 @@ date: 2020-02-25T21:54:24.869Z
 thumbnail: /img/shutterstock_554746582-710x458.jpg
 tags:
   - Cryptocurrency
-  - General
 description: >-
   The IOTA coordinator node responsible for confirming all transactions has been
   offline for more than 12 days, yet the token remains listed as one of the top
