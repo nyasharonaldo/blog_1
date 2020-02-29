@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const BlogPostTemplate = ({ data }) => {
-  console.log(data)
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout>

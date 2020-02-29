@@ -15,8 +15,8 @@ const BlogIndex = ({ data }) => {
         <div class="dark-overlay">
           <div class="landing-inner">
             <div style={{ display: `flex` }}>
-              <h1 class="x-large">Notre</h1>
-              <h3>Studio</h3>
+              <h1 class="x-large">Investor</h1>
+              <h3>Connector</h3>
             </div>
             <p class="lead">Share & Learn new Investment Techniques</p>
             <div class="buttons">
@@ -31,7 +31,6 @@ const BlogIndex = ({ data }) => {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const tag = node.frontmatter.tags[0]
-          console.log(tag);
           return (
             <article class="box" key={node.fields.slug}>
               <header>
