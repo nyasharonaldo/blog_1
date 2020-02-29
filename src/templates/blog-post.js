@@ -15,6 +15,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+      <section className="container">
       <article>
         <header>
           <h1
@@ -69,6 +70,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
+      </section>
     </Layout>
   )
 }

@@ -4,34 +4,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-
-const BlogIndex = ({ data }) => {
+const BlogPostTemplate = ({ data }) => {
+  console.log(data)
   const posts = data.allMarkdownRemark.edges
-
   return (
     <Layout>
-      <SEO title="All blog posts" />
-      <section class="landing">
-        <div class="dark-overlay">
-          <div class="landing-inner">
-            <div style={{ display: `flex` }}>
-              <h1 class="x-large">Notre</h1>
-              <h3>Studio</h3>
-            </div>
-            <p class="lead">Share & Learn new Investment Techniques</p>
-            <div class="buttons">
-              <Link to="#blog-grid" class="btn btn-primary">
-                View Blog
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SEO title="Fixed Income blog posts" />
       <section id="blog-grid" class="container">
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
-          const tag = node.frontmatter.tags[0]
-          console.log(tag);
+          const tagLink = node.frontmatter.tags
           return (
             <article class="box" key={node.fields.slug}>
               <header>
@@ -47,7 +29,7 @@ const BlogIndex = ({ data }) => {
                 <small>{node.frontmatter.date}</small>
               </header>
               <section>
-                <Link to={tag}>
+                <Link to={tagLink}>
                   {" "}
                   <small>{node.frontmatter.tags}</small>
                 </Link>
@@ -66,19 +48,23 @@ const BlogIndex = ({ data }) => {
   )
 }
 
-export default BlogIndex
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query {
+  query BlogPostByTags($tags: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+
+    allMarkdownRemark(
+      filter: { frontmatter: { tags: { eq: $tags} } }
+    ) {
       edges {
         node {
-          excerpt
+          id
+          excerpt(pruneLength: 160)
           fields {
             slug
           }
@@ -86,7 +72,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            tags
           }
         }
       }

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <nav class="navbar bg-dark">
       <h1>
-        <Link>
+        <Link to='/'>
           InvestorConnector
         </Link>
       </h1>
