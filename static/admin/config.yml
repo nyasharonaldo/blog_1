@@ -16,7 +16,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - {label: "Author", name: "author", widget: "select", multiple: false, in: 1,
-      options: ["Rachel Morgan", "Harvey Hiscock", "Tom Hall", "Nyasha Mutangadura","Stephen Kelehan","Eva Aherne"],default: ["Unknown"]}}
+      options: ["Rachel Morgan", "Harvey Hiscock", "Tom Hall", "Nyasha Mutangadura","Stephen Kelehan","Eva Aherne"],default: ["Unknown"]}
       - { label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - { label: "Tags", name: "tags", widget: "select", multiple: false, in: 1,
