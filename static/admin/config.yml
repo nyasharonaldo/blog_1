@@ -18,7 +18,7 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - { label: "Tags", name: "tags", widget: "select", multiple: false, in: 1,
-          options: ["Stocks & Shares", "Fixed Income", "Cryptocurrency", "General"],default: ["Design"]}
+          options: ["Stocks & Shares", "Fixed Income", "Cryptocurrency", "General","New Ideas"],default: ["General"]}
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       

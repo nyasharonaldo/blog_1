@@ -1,5 +1,4 @@
 import React from "react"
-import { Dropdown } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 
 const Header = () => {
@@ -25,35 +24,39 @@ const Header = () => {
     )
   )
   console.log(tags)
-
   return (
     <nav class="navbar bg-dark">
       <h1>
-        <Link to="/">InvestorConnector</Link>
+        <Link to="/">
+          <i class="fa fa-home"> </i>InvestorConnector
+        </Link>
       </h1>
-      <h1>
-        <i class="fa fa-balance-scale"></i>
+      <h1 class="nav-title">
+        <span>
+          <i class="fa fa-balance-scale"></i>
+        </span>
       </h1>
-      <ul>
-        {tags.map(tag => {
-          return (
+      
+      <div className="menu-bar">
+        <ul>
+          <li tab-index="0">
+            <i class="fa fa-bars menu-icon "></i>
+            
+            <ul>
             <li>
-              <Link to={tag}>{tag}</Link>
+            <Link to='/#blog-grid' >Blog Posts</Link>
             </li>
-          )
-        })}
-      </ul>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+              {tags.map(tag => {
+                return (
+                  <li>
+                    <Link to={tag}>{tag}</Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </li>
+        </ul>
+      </div>
     </nav>
   )
 }

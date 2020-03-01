@@ -6,8 +6,6 @@
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
-
-  
 }
 
 @mixin transition-ease {
@@ -71,6 +69,8 @@
 }
 
 // Buttons
+
+
 .btn {
   display: inline-block;
   background: $light-color;

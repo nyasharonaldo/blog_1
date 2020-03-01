@@ -370,16 +370,112 @@ img {
   width: 100%;
 }
 
-.navbar {
+.menu-bar {
+  padding: 0rem;
+  margin: 0;
+}
+
+.menu-bar a {
+  text-decoration: none;
+}
+
+.menu-bar ul li ul {
+  background: #17a2b8;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  right: 0;
+}
+
+.menu-bar ul {
+  margin-bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: #343a40;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.menu-bar ul li {
+  display: inline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar li {
+  color: #fff;
+  background: #343a40;
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.menu-bar li a {
+  color: #fff;
+}
+
+.menu-bar a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu-bar a:hover {
+  color: #f4f4f4;
+}
+
+.menu-bar a.navlinks {
+  font-size: 4rem;
+}
+
+.menu-bar li:hover,
+.menu-bar li:focus-within {
+  background: #17a2b8;
+  cursor: pointer;
+}
+
+.menu-bar li:focus-within a {
+  outline: none;
+}
+
+.menu-bar ul li:hover > ul,
+.menu-bar ul li:focus-within > ul,
+.menu-bar ul li ul:hover,
+.menu-bar ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: inline;
+}
+
+.menu-bar ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+.navbar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 0.9rem 2rem;
   position: fixed;
   z-index: 1;
@@ -389,39 +485,48 @@ img {
   opacity: 0.9;
 }
 
-.navbar ul {
+.navbar i {
+  padding: 0 1rem;
+}
+
+.navbar a {
+  color: #f4f4f4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar .menu-icon {
+  padding: 0 1rem;
+}
+
+.navbar .nav-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.navbar ul li {
-  display: inline;
-  margin: 0;
-  padding: 0;
+.navbar :first-child {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.navbar :last-child {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .navbar h1 {
   margin: 0;
   padding: 0;
   display: inline;
-}
-
-.navbar a {
-  color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.navbar a:hover {
-  color: #17a2b8;
-}
-
-.navbar a.navlinks {
-  font-size: 4rem;
 }
 
 #blog {
@@ -453,50 +558,6 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-}
-
-/* Header Showcase */
-#showcase {
-  min-height: 450px;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-#showcase .bg-image {
-  position: absolute;
-  background: #333 url("../img/motorcycle.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 1100px;
-  height: 450px;
-  z-index: -1;
-  opacity: 0.4;
-}
-
-#showcase h1 {
-  padding-top: 5rem;
-  padding-bottom: 0;
-}
-
-#showcase .content-wrap {
-  padding: 0 1.5em;
-}
-
-.blog-section {
-  margin: auto;
-  width: 100%;
-  max-width: 850px;
-  height: auto;
-  max-height: 450px;
-  background: #313131;
 }
 
 #blog-grid {
@@ -542,175 +603,6 @@ img {
 
 #blog-grid .box p {
   margin-bottom: 0;
-}
-
-#blog-grid .box#news {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-grid-column: 3;
-  grid-column: 3/3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  grid-row: 1/4;
-}
-
-.profile {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 4fr 2fr;
-      grid-template-columns: 2fr 4fr 2fr;
-  -webkit-box-align: centre;
-      -ms-flex-align: centre;
-          align-items: centre;
-  grid-gap: 2rem;
-  padding: 1rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.profile-grid {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "top top" "about about" "exp edu" "github github";
-  grid-gap: 1rem;
-}
-
-.profile-grid .profile-top {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: top;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.profile-grid .profile-top img {
-  width: 250px;
-}
-
-.profile-grid .profile-top .icons a {
-  color: #fff;
-  margin: 0 0.3rem;
-}
-
-.profile-grid .profile-top .icons a:hover {
-  color: #343a40;
-}
-
-.profile-grid .profile-about {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: about;
-  text-align: center;
-}
-
-.profile-grid .profile-about .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.profile-grid .profile-exp {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: exp;
-}
-
-.profile-grid .profile-edu {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: edu;
-}
-
-.profile-grid .profile-exp > div,
-.profile-grid .profile-edu > div {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: #ccc 1px dotted;
-}
-
-.profile-grid .profile-exp:last-child,
-.profile-grid .profile-edu:last-child {
-  border: none;
-}
-
-.profile-grid .profile-exp p,
-.profile-grid .profile-edu p {
-  margin: 0.5rem 0;
-}
-
-.profile-grid .profile-github {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: github;
-}
-
-.profile-grid .profile-github .repo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.profile-grid .profile-github .repo > div:first-child {
-  -webkit-box-flex: 7;
-      -ms-flex: 7;
-          flex: 7;
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
-}
-
-.profile-grid .profile-github .repo > div:last-child {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-}
-
-.post-form-header {
-  padding: 0.5rem;
-}
-
-.post {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
-  grid-gap: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem;
-}
-
-.post > div:first-child {
-  text-align: center;
-}
-
-.post img {
-  width: 150px;
 }
 
 @media (max-width: 700px) {

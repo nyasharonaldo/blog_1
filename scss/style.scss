@@ -7,7 +7,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
 body {
@@ -31,33 +30,55 @@ img {
   width: 100%;
 }
 
-// Navbar
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  border-bottom: solid 1px $primary-color;
-  opacity: 0.9;
+.menu-bar {
+  padding: 0rem;
+  margin: 0;
+  a {
+    text-decoration: none;
+  }
+
+  ul li ul {
+    background: $primary-color;
+    display: none;
+    visibility: hidden;
+
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    right: 0;
+  }
+
   ul {
-    display: flex;
     margin-bottom: 0;
     li {
-      
       display: inline;
+      justify-content: center;
       margin: 0;
       padding: 0;
     }
+    display: flex;
+    background: $dark-color;
+    list-style: none;
+
+    margin: 0;
+    padding-left: 0;
   }
 
-  h1 {
-    margin: 0;
-    padding: 0;
-    display: inline;
+  li {
+    color: #fff;
+    background: $dark-color;
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+
+  li a {
+    color: #fff;
   }
 
   a {
@@ -67,20 +88,89 @@ img {
     box-shadow: none;
 
     &:hover {
-      color: $primary-color;
+      color: $light-color;
     }
     &.navlinks {
       font-size: 4rem;
     }
   }
+
+  li:hover,
+  li:focus-within {
+    background: $primary-color;
+    cursor: pointer;
+  }
+
+  li:focus-within a {
+    outline: none;
+  }
+
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: inline;
+  }
+
+  ul li ul li {
+    clear: both;
+    width: 100%;
+  }
 }
 
-#blog{
-  height:100%
+// Navbar
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.9rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  opacity: 0.9;
+
+  i {
+    padding: 0 1rem;
+  }
+
+  a {
+    color: $light-color;
+    box-shadow: none;
+  }
+
+  .menu-icon {
+    padding: 0 1rem;
+  }
+
+  .nav-title {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  :first-child {
+    justify-content: flex-start;
+  }
+  :last-child {
+    justify-content: flex-end;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+}
+
+#blog {
+  height: 100%;
 }
 
 //landing
-
 
 .landing {
   position: relative;
@@ -100,49 +190,8 @@ img {
   }
 }
 
-/* Header Showcase */
-
-#showcase {
-  min-height: 450px;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-#showcase .bg-image {
-  position: absolute;
-  background: #333 url("../img/motorcycle.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  width: $max-width;
-  // max-width: 100%;
-  height: 450px;
-  z-index: -1;
-  opacity: 0.4;
-}
-
-#showcase h1 {
-  padding-top: 5rem;
-  padding-bottom: 0;
-}
-
-#showcase .content-wrap {
-  padding: 0 1.5em;
-}
-
 //Blog Grid
 
-.blog-section {
-  margin: auto;
-  width: 100%;
-  max-width: 850px;
-  height: auto;
-  max-height: 450px;
-  background: #313131;
-}
 
 #blog-grid {
   display: grid;
@@ -150,7 +199,6 @@ img {
   grid-template-rows: minmax(1rem, auto);
   grid-gap: 12px;
 
-  
   .box {
     display: flex-start;
     justify-content: center;
@@ -171,127 +219,15 @@ img {
       opacity: 1;
     }
 
-    h3{
+    h3 {
       margin-top: 0;
     }
 
-    p{
+    p {
       margin-bottom: 0;
     }
+
     
-    &#news {
-      align-items: flex-start;
-      grid-column: 3/3;
-      grid-row: 1/4;
-    }
-  }
-}
-
-// Profiles Page
-.profile {
-  display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
-  align-items: centre;
-  grid-gap: 2rem;
-  padding: 1rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-// Profile Page
-.profile-grid {
-  display: grid;
-  grid-template-areas: "top top" "about about" "exp edu" "github github";
-  grid-gap: 1rem;
-  .profile-top {
-    grid-area: top;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    img {
-      width: 250px;
-    }
-    .icons a {
-      color: #fff;
-      margin: 0 0.3rem;
-
-      &:hover {
-        color: $dark-color;
-      }
-    }
-  }
-  .profile-about {
-    grid-area: about;
-    text-align: center;
-
-    .skills {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-  .profile-exp {
-    grid-area: exp;
-  }
-  .profile-edu {
-    grid-area: edu;
-  }
-
-  .profile-exp,
-  .profile-edu {
-    & > div {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: #ccc 1px dotted;
-    }
-
-    &:last-child {
-      border: none;
-    }
-
-    p {
-      margin: 0.5rem 0;
-    }
-  }
-
-  .profile-github {
-    grid-area: github;
-    .repo {
-      display: flex;
-
-      & > div:first-child {
-        flex: 7;
-        flex-basis: 70%;
-      }
-      & > div:last-child {
-        flex: 3;
-        flex-basis: 20%;
-      }
-    }
-  }
-}
-
-// Posts page
-.post-form-header {
-  padding: 0.5rem;
-}
-
-.post {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-gap: 2rem;
-  align-items: center;
-  padding: 1rem;
-
-  & > div:first-child {
-    text-align: center;
-  }
-
-  img {
-    width: 150px;
   }
 }
 
