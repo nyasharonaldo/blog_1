@@ -15,7 +15,9 @@ collections:
      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {label: "Author", name: "author", widget: "select"}
+      - { label: "Publish Date", name: "date", widget: "datetime", multiple: false, in: 1,
+      options: ["Rachel Morgan", "Harvey Hiscock", "Tom Hall", "Nyasha Mutangadura","Stephen Kelehan","Eva Aherne"],default: ["Unknown"]}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - { label: "Tags", name: "tags", widget: "select", multiple: false, in: 1,
           options: ["Stocks & Shares", "Fixed Income", "Cryptocurrency", "General","New Ideas"],default: ["General"]}
