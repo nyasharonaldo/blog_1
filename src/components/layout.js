@@ -28,7 +28,7 @@ const Layout = ({ location, children }) => {
         <footer class="container">
           © {new Date().getFullYear()}, Built by
           {` `}
-          <strong>Notre Studios</strong>
+          <strong>Notre Studio</strong>
         </footer>
       </div>
     </>
