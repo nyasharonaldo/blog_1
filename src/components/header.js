@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
+import Menu from '../components/menu'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -28,7 +29,12 @@ const Header = () => {
     <nav class="navbar bg-dark">
       <h1>
         <Link to="/">
-          <i class="fa fa-home"> </i>InvestorConnector
+          <i class="fa fa-home"> </i>
+        
+        <span class='hide-sm'>
+        InvestorConnector
+        
+        </span>
         </Link>
       </h1>
       <h1 class="nav-title">
@@ -36,27 +42,8 @@ const Header = () => {
           <i class="fa fa-balance-scale"></i>
         </span>
       </h1>
+      <Menu tags={tags}/>
       
-      <div className="menu-bar">
-        <ul>
-          <li tab-index="0">
-            <i class="fa fa-bars menu-icon "></i>
-            
-            <ul>
-            <li>
-            <Link to='/#blog-grid' >Blog Posts</Link>
-            </li>
-              {tags.map(tag => {
-                return (
-                  <li>
-                    <Link to={tag}>{tag}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </li>
-        </ul>
-      </div>
     </nav>
   )
 }

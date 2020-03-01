@@ -84,7 +84,7 @@
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
@@ -370,6 +370,19 @@ img {
   width: 100%;
 }
 
+.menu {
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu button {
+  display: inline;
+}
+
 .menu-bar {
   padding: 0rem;
   margin: 0;
@@ -476,6 +489,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 8%;
   padding: 0.9rem 2rem;
   position: fixed;
   z-index: 1;
@@ -621,9 +635,21 @@ img {
   .lead {
     font-size: 1rem;
   }
-  .navbar {
+  #blog-grid {
     display: block;
+    padding: 0 0.2rem;
+  }
+  #blog-grid .box {
+    padding: 2rem 0rem;
+  }
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     text-align: center;
+    height: 10%;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
   }
   .navbar ul {
     text-align: center;
@@ -632,7 +658,7 @@ img {
             justify-content: center;
   }
   .navbar h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
   .dash-buttons a {
     display: block;

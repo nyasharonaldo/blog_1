@@ -18,18 +18,31 @@
     font-size: 1rem;
   }
 
+  #blog-grid{
+    display: block;
+    padding:0 0.2rem;
+    
+    .box {
+      padding:2rem 0rem;
+    }
+  }
+
   //Navbar
   .navbar{
-    display: block;
+    display: flex;
     text-align: center;
+    height:10%;
+    align-content: flex-end;
+
 
     ul{
       text-align: center;
+      
       justify-content: center;
     }
 
     h1{
-      margin-bottom: 1rem;
+      margin-bottom: 0rem;
     }
   }
 
